@@ -10,57 +10,37 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.SocialColl.Modal.BlogComment;
 
-
-
 @Repository
 public class BlogCommentDAOImpl implements BlogCommentDAO{
 
 	@Autowired
 	SessionFactory sessionFactory;
-
-	@Override
-	public void addBlogc(BlogComment blogcomment) {
+	
+	public void addBlogComment(BlogComment blogcomment) {
 		
 		try
 		{
-			Session session = sessionFactory.openSession();
+			Session session =sessionFactory.openSession();
 			Transaction trans = session.beginTransaction();
 			session.save(blogcomment);
 			trans.commit();
 			session.flush();
 			session.close();
 		}
-		catch(Exception ex)
+		catch(Exception e)
 		{
-			System.out.println("Exception"+ex);
+			System.out.println("Error"+e);
 		}
 	}
-
-
-	@Override
-	public List<BlogComment> getList() {
-		
-		return null;
+   
+	public List<BlogComment> getBlogCommentList() {
+		Session session=sessionFactory.openSession();
+		Transaction trans=session.beginTransaction();
+		@SuppressWarnings("unchecked")
+		List<BlogComment> blogcommentList=session.createQuery("from BlogComment").list();
+		trans.commit();
+		session.close();
+		return blogcommentList;
 	}
 
-	@Override
-	public void updateBlogc(BlogComment blogcomment) {
-		
-		
-	}
-
-	@Override
-	public BlogComment getBlogc(int BlogCommentId) {
-		
-		return null;
-	}
-
-	@Override
-	public void deleteBlogc(int BlogCommentId) {
-		
-		
-	}
-
-	
-	
 }

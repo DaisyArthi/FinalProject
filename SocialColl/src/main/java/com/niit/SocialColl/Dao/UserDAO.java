@@ -10,12 +10,9 @@ public interface UserDAO {
 	
 	public List<User> getList();
 	
+	public void deleteUser(User user);
+	
+	public User getUser(String userName);
+	
 	public void updateUser(User user);
-	
-	public User getUser(String UserName);
-	
-	public void approveUser(User user);
-
-	public void deleteUser(String UserName);
-	
 }

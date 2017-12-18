@@ -10,15 +10,12 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.SocialColl.Modal.Blog;
 
-
-
 @Repository
 public class BlogDAOImpl implements BlogDAO{
 
 	@Autowired
 	SessionFactory sessionFactory;
-
-	@Override
+	
 	public void addBlog(Blog blog) {
 		
 		try
@@ -30,15 +27,14 @@ public class BlogDAOImpl implements BlogDAO{
 			session.flush();
 			session.close();
 		}
-		catch(Exception ex)
+		catch(Exception e)
 		{
-			System.out.println("Exception"+ex);
+			System.out.println("Error"+e);
 		}
 		
 	}
 
-	@Override
-	public List<Blog> getListBlog() {
+	public List<Blog> getBlogList() {
 		Session session=sessionFactory.openSession();
 		Transaction trans=session.beginTransaction();
 		@SuppressWarnings("unchecked")
@@ -46,49 +42,55 @@ public class BlogDAOImpl implements BlogDAO{
 		trans.commit();
 		session.close();
 		return blogList;
-		
 	}
 
-	@Override
-	public void updateBlog(Blog blog) {
+	public void deleteBlog(Blog blog) {
 		
+
 		Session session=sessionFactory.openSession();
-		Transaction trans=session.beginTransaction();
-		session.update(blog);
+		Transaction trans=session.beginTransaction();  
+		session.delete(blog);
 		trans.commit();
-		session.flush();
 		session.close();
+		
 	}
 
-	@Override
-	public Blog getBlog(int BlogId) {
+	public Blog getBlog(int BlogID) {
 		
 		Session session=sessionFactory.openSession();
 		Transaction trans=session.beginTransaction();
-		Blog blog=(Blog)session.get(Blog.class, BlogId);
+		Blog blog=(Blog)session.get(Blog.class,BlogID);
 		trans.commit();
 		session.flush();
 		session.close();
 		return blog;
-		
 	}
 
-	@Override
-	public void approveBlog(Blog blog) {
+	public void updateBlog(Blog blog) {
 		
-		
-	}
 
-	@Override
-	public void deleteBlog(int BlogId) {
-		
 		Session session=sessionFactory.openSession();
-		Transaction trans=session.beginTransaction();
-		Blog blog=(Blog)session.get(Blog.class,BlogId);
-		session.delete(blog);
+		Transaction trans=session.beginTransaction(); 
+		session.update(blog);
 		trans.commit();
-		session.clear();
+		session.flush();
+		session.close();
 		
+	}
+
+	public boolean approveBlog(Blog blog) {
+		
+		try
+		{
+			blog.setStatus("A");
+			sessionFactory.getCurrentSession().update(blog);
+			return true;
+		}
+		catch(Exception e)
+		{
+			System.out.println("exception occured:"+e);
+			return false;
+		}
 	}
 
 }

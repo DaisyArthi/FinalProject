@@ -18,71 +18,70 @@ public class Job {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int JobId;
+	private int jobId;
 	
 	@Column
-	private String JobProfile;
+	private String jobProfile;
 	
 	@Column
-	private String JobDesc;
+	private String jobDesc;
 	
 	
 	@Column
-	private String Qualification;
+	private String qualification;
 	
 	@Column
-	private String Status;
+	private String status;
 	
 	@Column
-	private Date PostDate;
+	private Date postDate;
 
 	public int getJobId() {
-		return JobId;
+		return jobId;
 	}
 
 	public void setJobId(int jobId) {
-		JobId = jobId;
+		this.jobId = jobId;
 	}
 
 	public String getJobProfile() {
-		return JobProfile;
+		return jobProfile;
 	}
 
 	public void setJobProfile(String jobProfile) {
-		JobProfile = jobProfile;
+		this.jobProfile = jobProfile;
 	}
 
 	public String getJobDesc() {
-		return JobDesc;
+		return jobDesc;
 	}
 
 	public void setJobDesc(String jobDesc) {
-		JobDesc = jobDesc;
+		this.jobDesc = jobDesc;
 	}
 
 	public String getQualification() {
-		return Qualification;
+		return qualification;
 	}
 
 	public void setQualification(String qualification) {
-		Qualification = qualification;
+		this.qualification = qualification;
 	}
 
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
 
 	public Date getPostDate() {
-		return PostDate;
+		return postDate;
 	}
 
 	public void setPostDate(Date postDate) {
-		PostDate = postDate;
+		this.postDate = postDate;
 	}
-	
 	
 }

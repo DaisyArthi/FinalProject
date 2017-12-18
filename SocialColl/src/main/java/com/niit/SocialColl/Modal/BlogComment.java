@@ -18,70 +18,70 @@ public class BlogComment {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int BlogCommentId;
+	private int blogCommentId;
 	
 	@Column
-	private int BlogId;
+	private int blogId;
 	
 	@Column
-	private String Comment;
+	private String comment;
 	
 	@Column
-	private Date CommentDate;
+	private Date commentDate;
 	
 	@Column
-	private String UserName;
+	private String userName;
 	
 	@Column
-	private String Name;
+	private String name;
 
 	public int getBlogCommentId() {
-		return BlogCommentId;
+		return blogCommentId;
 	}
 
 	public void setBlogCommentId(int blogCommentId) {
-		BlogCommentId = blogCommentId;
+		this.blogCommentId = blogCommentId;
 	}
 
 	public int getBlogId() {
-		return BlogId;
+		return blogId;
 	}
 
 	public void setBlogId(int blogId) {
-		BlogId = blogId;
+		this.blogId = blogId;
 	}
 
 	public String getComment() {
-		return Comment;
+		return comment;
 	}
 
 	public void setComment(String comment) {
-		Comment = comment;
+		this.comment = comment;
 	}
 
 	public Date getCommentDate() {
-		return CommentDate;
+		return commentDate;
 	}
 
 	public void setCommentDate(Date commentDate) {
-		CommentDate = commentDate;
+		this.commentDate = commentDate;
 	}
 
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
 
 	public void setUserName(String userName) {
-		UserName = userName;
+		this.userName = userName;
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
-	
+
 	
 }

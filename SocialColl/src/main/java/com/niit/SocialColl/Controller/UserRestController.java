@@ -17,17 +17,17 @@ import com.niit.SocialColl.Modal.User;
 public class UserRestController {
 
 	@Autowired
-    UserDAO userdao;
+    UserDAO userDAO;
 	
 	@RequestMapping(value="/getAllUsers",method=RequestMethod.GET)
 	public List<User> getAllUser(){
 		System.out.println("getAllUsers");
-		return userdao.getList();
+		return userDAO.getList();
 	}
 	
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public ResponseEntity<User> createUser(@RequestBody User user){
-		 userdao.addUser(user);
+		 userDAO.addUser(user);
 		return new ResponseEntity<User>(user,HttpStatus.OK);
 			}
 }

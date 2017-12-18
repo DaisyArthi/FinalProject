@@ -18,70 +18,70 @@ public class Forum {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int ForumId;
+	private int forumId;
 	
 	@Column
-	private String ForumName;
+	private String forumName;
 	
 	@Column
-	private String ForumComment;
+	private String forumComment;
 	
 	@Column
-	private String UserName;
+	private String userName;
 	
 	@Column 
-	private Date CreateDate;
+	private Date createDate;
 	
 	@Column
-	private String Status;
+	private String status;
 
 	public int getForumId() {
-		return ForumId;
+		return forumId;
 	}
 
 	public void setForumId(int forumId) {
-		ForumId = forumId;
+		this.forumId = forumId;
 	}
 
 	public String getForumName() {
-		return ForumName;
+		return forumName;
 	}
 
 	public void setForumName(String forumName) {
-		ForumName = forumName;
+		this.forumName = forumName;
 	}
 
 	public String getForumComment() {
-		return ForumComment;
+		return forumComment;
 	}
 
 	public void setForumComment(String forumComment) {
-		ForumComment = forumComment;
+		this.forumComment = forumComment;
 	}
 
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
 
 	public void setUserName(String userName) {
-		UserName = userName;
+		this.userName = userName;
 	}
 
 	public Date getCreateDate() {
-		return CreateDate;
+		return createDate;
 	}
 
 	public void setCreateDate(Date createDate) {
-		CreateDate = createDate;
+		this.createDate = createDate;
 	}
 
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
-	
+
 	
 }

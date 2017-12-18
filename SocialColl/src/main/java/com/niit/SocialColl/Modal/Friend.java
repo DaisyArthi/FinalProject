@@ -19,37 +19,37 @@ public class Friend {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int FriendId;
+	private int friendId;
 	
 	@Column
-	private String UserName;
+	private String userName;
 	
 	@Column
-	private String Status;
+	private String status;
 
 	public int getFriendId() {
-		return FriendId;
+		return friendId;
 	}
 
 	public void setFriendId(int friendId) {
-		FriendId = friendId;
+		this.friendId = friendId;
 	}
 
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
 
 	public void setUserName(String userName) {
-		UserName = userName;
+		this.userName = userName;
 	}
 
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
-	
+
 	
 }

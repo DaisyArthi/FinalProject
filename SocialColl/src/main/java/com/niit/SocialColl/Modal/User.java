@@ -12,94 +12,95 @@ import org.springframework.stereotype.Component;
 public class User {
 
 	@Column
-	private String Name;
+	private String name;
 	
 	@Id
-	private String UserName;
+	private String userName;
 	
 	@Column
-	private String Password;
+	private String password;
 	
 	@Column
-	private String Email;
+	private String email;
 	
 	@Column
-	private String Contact;
+	private String contact;
 	
 	@Column
-	private String DOB;
+	private String dob;
 	
 	@Column
-	private String Role;
+	private String role;
 	
 	@Column
-	private String Status;
+	private String status;
 	
 	@Column
 	private String isOnline;
 
+
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
 
 	public void setUserName(String userName) {
-		UserName = userName;
+		this.userName = userName;
 	}
 
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public String getContact() {
-		return Contact;
+		return contact;
 	}
 
 	public void setContact(String contact) {
-		Contact = contact;
+		this.contact = contact;
 	}
 
-	public String getDOB() {
-		return DOB;
+	public String getDob() {
+		return dob;
 	}
 
-	public void setDOB(String dOB) {
-		DOB = dOB;
+	public void setDob(String dob) {
+		this.dob = dob;
 	}
 
 	public String getRole() {
-		return Role;
+		return role;
 	}
 
 	public void setRole(String role) {
-		Role = role;
+		this.role = role;
 	}
 
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
 
 	public String getIsOnline() {

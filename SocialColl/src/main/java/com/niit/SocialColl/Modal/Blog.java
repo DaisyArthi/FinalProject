@@ -17,81 +17,83 @@ public class Blog {
 
     @Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int BlogId;
+	private int blogId;
 	
 	@Column
-	private String BClogName;
+	private String blogName;
 	
 	@Column
-	private String BlogContent;
+	private String blogContent;
     
     @Column
-    private int UserName;
+    private String userName;
   
     @Column
-    private Date CreateDate;
+    private Date createDate;
 
     @Column
-    private String Status;
+    private String status;
   
     @Column
-    private int Likes;
+    private int likes;
 
 	public int getBlogId() {
-		return BlogId;
+		return blogId;
 	}
 
 	public void setBlogId(int blogId) {
-		BlogId = blogId;
+		this.blogId = blogId;
 	}
 
-	public String getBClogName() {
-		return BClogName;
+	public String getBlogName() {
+		return blogName;
 	}
 
-	public void setBClogName(String bClogName) {
-		BClogName = bClogName;
+	public void setBlogName(String blogName) {
+		this.blogName = blogName;
 	}
 
 	public String getBlogContent() {
-		return BlogContent;
+		return blogContent;
 	}
 
 	public void setBlogContent(String blogContent) {
-		BlogContent = blogContent;
-	}
-
-	public int getUserName() {
-		return UserName;
-	}
-
-	public void setUserName(int userName) {
-		UserName = userName;
+		this.blogContent = blogContent;
 	}
 
 	public Date getCreateDate() {
-		return CreateDate;
+		return createDate;
 	}
 
 	public void setCreateDate(Date createDate) {
-		CreateDate = createDate;
+		this.createDate = createDate;
 	}
 
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
 
 	public int getLikes() {
-		return Likes;
+		return likes;
 	}
 
 	public void setLikes(int likes) {
-		Likes = likes;
+		this.likes = likes;
 	}
-    
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	
+
     
 }

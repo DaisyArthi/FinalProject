@@ -2,24 +2,22 @@ package com.niit.SocialColl.Dao;
 
 import java.util.List;
 
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
 import com.niit.SocialColl.Modal.User;
 
 @Repository
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl implements UserDAO {
 
 	@Autowired
 	SessionFactory sessionFactory;
-
 	
 	public void addUser(User user) {
-		
 		try
 		{
 			Session session = sessionFactory.openSession();
@@ -29,14 +27,12 @@ public class UserDAOImpl implements UserDAO{
 			session.flush();
 			session.close();
 		}
-		catch(Exception ex)
+		catch(Exception e)
 		{
-			System.out.println("Exception"+ex);
+			System.out.println("Error"+e);
 		}
+		
 	}
-
-
-	@Override
 	public List<User> getList() {
 		Session session=sessionFactory.openSession();
 		Transaction trans=session.beginTransaction();
@@ -47,53 +43,33 @@ public class UserDAOImpl implements UserDAO{
 		return userList;
 		
 	}
-
-
-	@Override
-	public void updateUser(User user) {
+	public void deleteUser(User user) {
 		
 		Session session=sessionFactory.openSession();
-		Transaction trans=session.beginTransaction();
-		session.update(user);
+		Transaction trans=session.beginTransaction();  
+		session.delete(user);
 		trans.commit();
-		session.flush();
 		session.close();
 		
 	}
-
-
-	@Override
-	public User getUser(String UserName) {
+	public User getUser(String userName) {
 		
 		Session session=sessionFactory.openSession();
 		Transaction trans=session.beginTransaction();
-		User user=(User)session.get(User.class, UserName);
+		User user=(User)session.get(User.class,userName);
 		trans.commit();
 		session.flush();
 		session.close();
 		return user;
-		
 	}
-
-
-	@Override
-	public void approveUser(User user) {
-		
-		
-	}
-
-
-	@Override
-	public void deleteUser(String UserName) {
+	public void updateUser(User user) {
 		
 		Session session=sessionFactory.openSession();
-		Transaction trans=session.beginTransaction();
-		User user=(User)session.get(User.class, UserName);
-		session.delete(user);
+		Transaction trans=session.beginTransaction(); 
+		session.update(user);
 		trans.commit();
-		session.clear();
-		
+		session.flush();
+		session.close();
 	}
-	
-	
+
 }
