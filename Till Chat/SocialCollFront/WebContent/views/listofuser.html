@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>UserList</title>
+</head>
+<body>
+<div>
+<table class="table">
+<thead>
+<tr>
+<th>username</th>
+<th>emailId</th>
+<th>password</th>
+<th>status</th>
+<th>firstname</th>
+<th>lastname</th>
+<th>phonenumber</th>
+<th>Edit</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="u in user">
+<td>{{u.username}}</td>
+<td>{{u.email}}</td>
+<td>{{u.password}}</td>
+<td ng-if="u.online">Yes</td>
+<td ng-if="!u.online">No</td>
+<td>{{u.firstname}}</td>
+<td>{{u.lastname}}</td>
+<td>{{u.contact}}</td>
+<td><a href="#/updateUser" class="btn btn-success">Edit</a>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

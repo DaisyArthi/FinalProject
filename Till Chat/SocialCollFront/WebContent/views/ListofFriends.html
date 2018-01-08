@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+<div align="center">
+<h1>Your Friends</h1>
+<p>Here are a list of your friends...</p>
+<br>
+<table class="table">
+<tr>
+<th>Names</th>
+</tr>
+<tr ng-repeat="f in friends">
+<td ng-hide="f.fromId==currentUser.username">{{f.fromId}}</td>
+<td ng-hide="f.toId==currentUser.username">{{f.toId}}</td>
+ <td><img src="http://localhost:8084/SocialColl/getimage/{{f.fromId}}" ng-hide="f.fromId==currentUser.username" width="50" height="50" class="img-rounded">
+<img src="http://localhost:8084/SocialColl/getimage/{{f.toId}}" ng-hide="f.toId==currentUser.username" width="50" height="50" class="img-rounded"></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
