@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+      tr,td{
+          padding: 10px;
+           }
+        var fblog = document.myform.blogName.value, fdesc = document.myform.description.value;
+        
+         if( fblog == "" || fblog == null)
+         {
+          alert(" Enter the Blog Name ");
+          return false;
+         } 
+         elseif( fdesc == "" || fblog == null )
+         {
+          alert(" Enter the Blog Description");
+          return false;
+         }
+         elseif( fblog != '' && fdesc != '')
+         {
+          alert(" Blog added Successfully");
+          return true;
+         }
+</style> 
+<title></title>
+</head>
+<body>
+<div align="center">
+<div>
+<form name="myform">
+<table>
+<thead>
+<tr>
+<td><h1>Add Blog</h1></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><label>Blog Name</label></td>
+<td><label>:</label></td>
+<td><input class="form-control" type="text" placeholder="Enter blog Name" ng-model="blog.blogName" required="required"></td>
+</tr>
+<br>
+<tr>
+<td><label>Description</label></td>
+<td><label>:</label></td>
+<td><textarea rows="10" class="form-control" placeholder="Enter the Details" ng-model="blog.description" required="required"></textarea></td>
+</tr>
+<br>
+<br>
+<br>
+<tr>
+<td><button class="button btn btn-lg btn-primary btn-block" type="submit" ng-click="addblog()">ADD</button></td>
+</tr>
+</tbody>
+</table>
+</form>
+</div>
+</div>
+</body>
+</html>

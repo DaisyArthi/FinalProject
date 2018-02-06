@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+      tr,td{
+          padding: 10px;
+           }
+</style> 
+<title>Add Job</title>
+</head>
+<body>
+<div align="center">
+<form>
+<table>
+<thead>
+<tr>
+<th><h1>Add Job</h1></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><label>Job Title</label></td>
+<td><label>:</label></td>
+<td><input type="text" placeholder="Enter Job Title" ng-model="job.jobProfile" class="form-control" required="required"></td>
+</tr>
+<tr>
+<td><label>Description</label></td>
+<td><label>:</label></td>
+<td><textarea class="form-control" placeholder="Enter Job description" ng-model="job.jobDesc" required="required"></textarea></td>
+</tr>
+<tr>
+<td><label>Skills Required</label></td>
+<td><label>:</label></td>
+<td><textarea placeholder="Enter Skills" class="form-control" ng-model="job.qualification" required="required"></textarea></td>
+</tr>
+<tr>
+<td><label>Year of Exp</label></td>
+<td><label>:</label></td>
+<td><textarea class="form-control" placeholder="Enter Years of Experience" ng-model="job.yrsOfExp" required="required"></textarea></td>
+</tr>
+<tr>
+<td><label>Salary</label></td>
+<td><label>:</label></td>
+<td><input placeholder="Enter Salary" class="form-control" type="text" ng-model="job.salary" required="required"></td>
+</tr>
+<tr>
+<td><label>CompanyName</label></td>
+<td><label>:</label></td>
+<td><input placeholder="Enter Location" class="form-control" type="text" ng-model="job.companyname" required="required"></td>
+</tr>
+<tr>
+<td><label>Location</label></td>
+<td><label>:</label></td>
+<td><input placeholder="Enter Location" class="form-control" type="text" ng-model="job.location" required="required"></td>
+</tr>
+<tr>
+<td><button type="button" class="btn btn-success" ng-Click=addjob()>Add</button></td>
+</tr>
+</tbody>
+</table>
+</form>
+</div>
+</body>
+</html>
