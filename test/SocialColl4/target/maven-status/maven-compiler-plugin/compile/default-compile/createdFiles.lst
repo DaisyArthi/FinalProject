@@ -1,0 +1,7 @@
+com\niit\dao\BlogDAOImpl.class
+com\niit\dao\BlogDAO.class
+com\niit\config\WebAppInitializer.class
+com\niit\config\WebConfig.class
+com\niit\model\Blog.class
+com\niit\controller\BlogController.class
+com\niit\config\ApplicationConfig.class
